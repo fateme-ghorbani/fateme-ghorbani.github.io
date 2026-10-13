@@ -144,68 +144,176 @@
         <p>Tools: Python · Pandas · Data Analysis</p>
       </div>
 
-      <div class="project">
-        <h3>Discovering Suspicious Vessel Activity</h3>
-        <p class="muted">
-         ## Discovering Smuggling Ports and Unconventional Points of Interest Using Machine Learning
+    
+```html
+<div class="project">
+  <h3>Discovering Smuggling Ports and Unconventional Points of Interest</h3>
 
-**Project Type:** Bachelor's Thesis | Unsupervised Machine Learning | Geospatial Data Analysis
+  <p class="muted">
+    <strong>Bachelor's Thesis</strong> |
+    Unsupervised Machine Learning |
+    Geospatial Data Analysis
+  </p>
 
-### Project Overview
+  <h4>Project Overview</h4>
+  <p>
+    This project explored how Automatic Identification System (AIS)
+    vessel data and unsupervised machine learning could help identify
+    unconventional Points of Interest (UPOIs) and locations exhibiting
+    potentially unusual vessel activity. The goal was to discover
+    spatial patterns that could warrant further investigation without
+    relying on predefined locations or labeled examples.
+  </p>
 
-This project investigated how Automatic Identification System (AIS) vessel data and unsupervised machine learning could be used to identify unconventional Points of Interest (UPOIs) and locations exhibiting potentially suspicious vessel activity. The main objective was to discover spatial patterns in vessel movements and identify locations that might warrant further investigation, rather than relying on predefined port locations or labeled examples of suspicious activity.
+  <h4>Data Source and Scope</h4>
+  <p>
+    The dataset was obtained from the
+    <strong>U.S. MarineCadastre AIS dataset</strong>. The timestamps
+    in the processed data ranged from December 31, 2020, to
+    March 28, 2021. The study focused on a geographic area in the
+    Pacific Ocean, bounded by longitudes -131.929° to -111.225°
+    and latitudes 26.086° to 28.618°.
+  </p>
 
-### Data Source and Scope
+  <p>
+    The analysis examined AIS attributes including latitude,
+    longitude, Speed Over Ground (SOG), draft, heading, and vessel
+    characteristics. Latitude and longitude were used as the primary
+    inputs for spatial clustering, while vessel speed was used to
+    focus on slow-moving observations.
+  </p>
 
-The analysis used vessel tracking data from the **U.S. MarineCadastre AIS dataset**, covering the period from **December 31, 2020, to March 31, 2021**. The study focused on a defined geographic area in the Pacific Ocean, bounded by longitude and latitude coordinates of approximately **-131.929° to -111.225°** and **26.086° to 28.618°**, respectively.
+  <h4>Data Preprocessing</h4>
+  <p>
+    The preprocessing workflow included exploratory data analysis,
+    inspection of missing values, handling of selected categorical
+    attributes, and outlier detection.
+  </p>
 
-The initial dataset contained **385,560 records**. After data cleaning and preprocessing, the dataset was reduced to **304,988 records and 17 columns**. Further filtering and preparation produced a working dataset of **142,649 records** for the subsequent analysis.
+  <ul>
+    <li>
+      Removed <strong>41,051 rows</strong> identified by the combined
+      IQR-based and rule-based outlier detection procedure.
+    </li>
+    <li>
+      Retained <strong>263,937 rows across 17 columns</strong>
+      after this outlier-removal step.
+    </li>
+    <li>
+      Excluded selected vessel-identification and descriptive
+      columns from the cleaned dataset.
+    </li>
+  </ul>
 
-AIS records provide information about vessel positions and movements. The relevant fields used or considered during preprocessing included latitude, longitude, Speed Over Ground (SOG), and draft, alongside vessel-identification and dimensional fields such as MMSI, vessel name, call sign, width, and length. The spatial analysis focused primarily on latitude and longitude, while vessel speed helped investigate locations where vessels were stationary or moving slowly.
+  <p>
+    The outlier-removal procedure was applied across multiple numerical
+    attributes. Consequently, the resulting dataset depended on the
+    statistical and rule-based criteria used during preprocessing.
+  </p>
 
-### Problem and Analytical Challenges
+  <h4>Problem and Challenges</h4>
+  <p>
+    A key challenge was exploring potentially meaningful geographic
+    patterns without predefined labels or a known number of clusters.
+    Dense groups of vessel observations may reflect ordinary maritime
+    activity, while observations outside dense groups may warrant
+    additional investigation. Spatial density alone, however, cannot
+    establish whether an activity is suspicious.
+  </p>
 
-A key challenge was identifying potentially meaningful locations without a predefined list of suspicious ports or labeled training examples. Vessel movements can create dense spatial clusters around ordinary ports, anchorages, and other frequently visited locations, while unusual locations may appear as small or isolated groups of observations.
+  <h4>Methodology: Why HDBSCAN?</h4>
+  <p>
+    I applied
+    <strong>HDBSCAN (Hierarchical Density-Based Spatial Clustering
+    of Applications with Noise)</strong> to standardized latitude
+    and longitude coordinates. This method was selected to explore
+    geographic groupings without specifying the number of clusters
+    in advance.
+  </p>
 
-The dataset also required careful preprocessing to make the analysis meaningful. This included cleaning records, selecting relevant features, handling missing values, and applying reasonable vessel-speed constraints. Vessel identifiers and descriptive fields were not used as direct inputs to the spatial clustering model because the primary objective was to discover geographic patterns rather than group vessels by identity.
+  <ul>
+    <li>
+      <strong>No predefined cluster count:</strong>
+      HDBSCAN can discover clusters from the density structure
+      of the observations.
+    </li>
+    <li>
+      <strong>Spatial pattern discovery:</strong>
+      Density-based clustering can identify groups with irregular
+      shapes.
+    </li>
+    <li>
+      <strong>Noise identification:</strong>
+      Observations that are not assigned to a discovered cluster
+      receive the noise label (-1) and can be examined separately.
+    </li>
+  </ul>
 
-Another challenge was distinguishing potentially interesting locations from ordinary vessel activity. A location identified by a clustering algorithm is not automatically suspicious, and the results needed to be interpreted in the context of vessel movement and the limitations of the available data.
+  <p>
+    The implementation used a minimum cluster size of
+    <strong>10 observations</strong> and focused on vessel observations
+    with Speed Over Ground (SOG) below 5 knots. The latitude and
+    longitude coordinates were standardized before clustering.
+  </p>
 
-### Methodology and Why HDBSCAN Was Selected
+  <h4>Results and Key Findings</h4>
+  <ul>
+    <li>
+      Removed <strong>41,051 rows</strong> during the reported
+      outlier-removal step.
+    </li>
+    <li>
+      Retained <strong>263,937 rows and 17 columns</strong>
+      after outlier removal.
+    </li>
+    <li>
+      In the clustering output currently verified, HDBSCAN produced
+      two clusters containing <strong>32 and 13 observations</strong>,
+      respectively, and labeled <strong>10 observations as noise</strong>.
+    </li>
+  </ul>
 
-I used **HDBSCAN (Hierarchical Density-Based Spatial Clustering of Applications with Noise)** to identify geographically dense groups of vessel observations and distinguish them from observations that did not belong to any sufficiently dense cluster.
+  <p>
+    The verified clustering output accounts for 55 observations.
+    This result has not yet been reconciled with the full filtered
+    dataset, so the 10 noise observations should not be interpreted
+    as 10 unique geographic locations or confirmed UPOIs.
+  </p>
 
-HDBSCAN was suitable for this problem for three main reasons:
+  <h4>Outcome and Limitations</h4>
+  <p>
+    This project explored a data-driven workflow combining AIS data
+    preprocessing, exploratory analysis, geospatial visualization,
+    and density-based clustering. It investigated how spatial patterns
+    among slow-moving vessel observations could be examined to identify
+    records for further analysis.
+  </p>
 
-- **Unknown number of clusters:** The number and location of potentially interesting areas were not known in advance, so a method requiring a predefined number of clusters was less suitable.
-- **Irregular spatial patterns:** Vessel activity does not necessarily form circular or equally sized groups. A density-based method can identify clusters with irregular shapes.
-- **Noise detection:** HDBSCAN labels observations that do not fit sufficiently dense clusters as noise, allowing isolated or less common spatial patterns to be examined separately.
+  <p>
+    <strong>Important limitation:</strong>
+    HDBSCAN noise labels indicate observations that were not assigned
+    to a cluster; they do not establish illegal or suspicious activity.
+    The results are exploratory and require contextual validation.
+    The verified outputs do not currently establish the previously
+    reported counts of 917 candidate UPOIs or zero candidates under
+    an SOG threshold below 0.5 knots.
+  </p>
 
-The clustering process used standardized latitude and longitude coordinates, with a minimum cluster size of **10 observations**. I also investigated vessel speed as part of the analysis, applying different Speed Over Ground (SOG) thresholds to examine how the selection of slow-moving or stationary vessel records affected the identified locations.
+  <p>
+    Through this project, I gained experience with data preprocessing,
+    exploratory data analysis, geospatial visualization, unsupervised
+    machine learning, and interpreting analytical findings in light
+    of methodological limitations.
+  </p>
 
-### Results and Key Findings
+  <a href="https://github.com/fateme-ghorbani/Bachelor-s-Thesis-in-Computer-Science"
+     target="_blank"
+     rel="noopener noreferrer">
+    View project on GitHub →
+  </a>
+</div>
+```
 
-The analysis produced several measurable outcomes:
-
-- Processed an initial dataset of **385,560 AIS records**, reducing it to **304,988 records across 17 columns** after an initial cleaning stage.
-- Prepared a further working dataset of **142,649 records** for the subsequent analysis.
-- Identified **917 candidate unconventional Points of Interest** under the **SOG below 5 knots** filtering scenario.
-- Found **zero candidate POIs** under the stricter **SOG below 0.5 knots** scenario after the applied filtering process.
-
-The comparison between the two speed thresholds demonstrated that the definition of vessel movement substantially affected the number of candidate locations identified. The less restrictive threshold produced a set of candidate locations for further examination, while the stricter threshold did not produce candidate POIs in the processed dataset.
-
-### Outcome, Contribution, and Limitations
-
-The project established a data-driven workflow for exploring vessel activity and identifying unconventional geographic patterns using AIS data, preprocessing, feature selection, and density-based clustering. It demonstrated how unsupervised machine learning can help narrow a large vessel-tracking dataset to a smaller set of locations for further investigation.
-
-Importantly, the **917 locations are candidate UPOIs, not confirmed smuggling ports**. The available data did not provide ground-truth labels that would establish whether a location was involved in smuggling. Therefore, the project should be understood as an exploratory anomaly-discovery approach rather than a validated smuggling-detection system.
-
-This work strengthened my experience in geospatial data analysis, data preprocessing, feature selection, unsupervised machine learning, and interpreting algorithmic results in light of real-world limitations.
-        </p>
-        <a href="https://github.com/fateme-ghorbani/Bachelor-s-Thesis-in-Computer-Science">
-          View project on GitHub →
-        </a>
-      </div>
 
       <div class="project">
         <h3>Sales Analysis</h3>
