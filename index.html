@@ -147,9 +147,60 @@
       <div class="project">
         <h3>Discovering Suspicious Vessel Activity</h3>
         <p class="muted">
-          A machine learning project exploring vessel movement
-          patterns and unusual points of interest using AIS data
-          and density-based clustering.
+         ## Discovering Smuggling Ports and Unconventional Points of Interest Using Machine Learning
+
+**Project Type:** Bachelor's Thesis | Unsupervised Machine Learning | Geospatial Data Analysis
+
+### Project Overview
+
+This project investigated how Automatic Identification System (AIS) vessel data and unsupervised machine learning could be used to identify unconventional Points of Interest (UPOIs) and locations exhibiting potentially suspicious vessel activity. The main objective was to discover spatial patterns in vessel movements and identify locations that might warrant further investigation, rather than relying on predefined port locations or labeled examples of suspicious activity.
+
+### Data Source and Scope
+
+The analysis used vessel tracking data from the **U.S. MarineCadastre AIS dataset**, covering the period from **December 31, 2020, to March 31, 2021**. The study focused on a defined geographic area in the Pacific Ocean, bounded by longitude and latitude coordinates of approximately **-131.929° to -111.225°** and **26.086° to 28.618°**, respectively.
+
+The initial dataset contained **385,560 records**. After data cleaning and preprocessing, the dataset was reduced to **304,988 records and 17 columns**. Further filtering and preparation produced a working dataset of **142,649 records** for the subsequent analysis.
+
+AIS records provide information about vessel positions and movements. The relevant fields used or considered during preprocessing included latitude, longitude, Speed Over Ground (SOG), and draft, alongside vessel-identification and dimensional fields such as MMSI, vessel name, call sign, width, and length. The spatial analysis focused primarily on latitude and longitude, while vessel speed helped investigate locations where vessels were stationary or moving slowly.
+
+### Problem and Analytical Challenges
+
+A key challenge was identifying potentially meaningful locations without a predefined list of suspicious ports or labeled training examples. Vessel movements can create dense spatial clusters around ordinary ports, anchorages, and other frequently visited locations, while unusual locations may appear as small or isolated groups of observations.
+
+The dataset also required careful preprocessing to make the analysis meaningful. This included cleaning records, selecting relevant features, handling missing values, and applying reasonable vessel-speed constraints. Vessel identifiers and descriptive fields were not used as direct inputs to the spatial clustering model because the primary objective was to discover geographic patterns rather than group vessels by identity.
+
+Another challenge was distinguishing potentially interesting locations from ordinary vessel activity. A location identified by a clustering algorithm is not automatically suspicious, and the results needed to be interpreted in the context of vessel movement and the limitations of the available data.
+
+### Methodology and Why HDBSCAN Was Selected
+
+I used **HDBSCAN (Hierarchical Density-Based Spatial Clustering of Applications with Noise)** to identify geographically dense groups of vessel observations and distinguish them from observations that did not belong to any sufficiently dense cluster.
+
+HDBSCAN was suitable for this problem for three main reasons:
+
+- **Unknown number of clusters:** The number and location of potentially interesting areas were not known in advance, so a method requiring a predefined number of clusters was less suitable.
+- **Irregular spatial patterns:** Vessel activity does not necessarily form circular or equally sized groups. A density-based method can identify clusters with irregular shapes.
+- **Noise detection:** HDBSCAN labels observations that do not fit sufficiently dense clusters as noise, allowing isolated or less common spatial patterns to be examined separately.
+
+The clustering process used standardized latitude and longitude coordinates, with a minimum cluster size of **10 observations**. I also investigated vessel speed as part of the analysis, applying different Speed Over Ground (SOG) thresholds to examine how the selection of slow-moving or stationary vessel records affected the identified locations.
+
+### Results and Key Findings
+
+The analysis produced several measurable outcomes:
+
+- Processed an initial dataset of **385,560 AIS records**, reducing it to **304,988 records across 17 columns** after an initial cleaning stage.
+- Prepared a further working dataset of **142,649 records** for the subsequent analysis.
+- Identified **917 candidate unconventional Points of Interest** under the **SOG below 5 knots** filtering scenario.
+- Found **zero candidate POIs** under the stricter **SOG below 0.5 knots** scenario after the applied filtering process.
+
+The comparison between the two speed thresholds demonstrated that the definition of vessel movement substantially affected the number of candidate locations identified. The less restrictive threshold produced a set of candidate locations for further examination, while the stricter threshold did not produce candidate POIs in the processed dataset.
+
+### Outcome, Contribution, and Limitations
+
+The project established a data-driven workflow for exploring vessel activity and identifying unconventional geographic patterns using AIS data, preprocessing, feature selection, and density-based clustering. It demonstrated how unsupervised machine learning can help narrow a large vessel-tracking dataset to a smaller set of locations for further investigation.
+
+Importantly, the **917 locations are candidate UPOIs, not confirmed smuggling ports**. The available data did not provide ground-truth labels that would establish whether a location was involved in smuggling. Therefore, the project should be understood as an exploratory anomaly-discovery approach rather than a validated smuggling-detection system.
+
+This work strengthened my experience in geospatial data analysis, data preprocessing, feature selection, unsupervised machine learning, and interpreting algorithmic results in light of real-world limitations.
         </p>
         <a href="https://github.com/fateme-ghorbani/Bachelor-s-Thesis-in-Computer-Science">
           View project on GitHub →
