@@ -75,6 +75,35 @@
       border-bottom: 1px solid #e5e8e2;
     }
 
+    ```css
+.project-images figure {
+  margin: 24px 0;
+  padding: 12px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.project-images img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.project-images figcaption {
+  margin-top: 12px;
+  padding: 0 4px 4px;
+  color: #64748b;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  text-align: center;
+}
+```
+
     .muted {
       color: #687067;
     }
@@ -201,16 +230,17 @@
   </p>
 
   <div class="project-images">
-    <figure>
-      <img
-        src="images/clustermap.png"
-        alt="Geographic map showing HDBSCAN clusters and noise points"
-      />
-      <figcaption>
-        Spatial distribution of vessel observations and detected clusters.
-      </figcaption>
-    </figure>
+   
 
+  <figure>
+    <img
+      src="images/cluster-map.png"
+      alt="Geographic map showing HDBSCAN clusters and noise points"
+    />
+    <figcaption>
+      Spatial distribution of vessel observations and detected clusters.
+    </figcaption>
+   </figure>
     <figure>
       <img
         src="images/heatmap.png"
@@ -281,7 +311,7 @@
 
     <section id="experience">
       <h2>Experience</h2>
-      <h3>Junior Frontend Developer · Takhfifan</h3>
+      <h3>Frontend Developer · Takhfifan</h3>
       <p class="muted">Dec 2023 – Dec 2024</p>
       <p>
         Developed and maintained analytics tracking scripts
