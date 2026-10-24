@@ -1,349 +1,1157 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fateme Ghorbani | Portfolio</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fafaf8;
-      color: #242820;
-      line-height: 1.7;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Fateme Ghorbani | Portfolio</title>
+  </head>
+  <body>
+    <main>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+      </nav>
 
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 70px 24px;
-    }
+      <p class="eyebrow">Personal Portfolio</p>
 
-    nav {
-      display: flex;
-      gap: 22px;
-      flex-wrap: wrap;
-      margin-bottom: 80px;
-    }
+      <section class="intro-container">
+        <div class="intro-text">
+          <h1>Fatemeh Ghorbani</h1>
 
-    nav a, .project a {
-      color: #47745c;
-      text-decoration: none;
-    }
+          <p class="intro">
+            Computer Science graduate with professional software development
+            experience and hands-on experience in data analysis, analytics
+            tracking, and machine learning. Currently pursuing an M.Sc. in
+            Computer Engineering at the University of Tehran, specializing in
+            Engineering Education.
+          </p>
+        </div>
 
-    .eyebrow {
-      color: #47745c;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 13px;
-    }
+        <img src="images/me.jpg" alt="Fatemeh Ghorbani" class="profile-photo" />
+      </section>
 
-    h1 {
-      font-size: clamp(38px, 7vw, 60px);
-      line-height: 1.15;
-      margin: 16px 0;
-    }
-
-    h2 {
-      margin-top: 65px;
-      border-bottom: 1px solid #e5e8e2;
-      padding-bottom: 10px;
-    }
-
-    .intro {
-      max-width: 680px;
-      color: #687067;
-      font-size: 18px;
-    }
-
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .skills span {
-      border: 1px solid #e5e8e2;
-      background: white;
-      border-radius: 5px;
-      padding: 6px 12px;
-    }
-
-    .project {
-      padding: 20px 0;
-      border-bottom: 1px solid #e5e8e2;
-    }
-
-    ```css
-.project-images figure {
-  margin: 24px 0;
-  padding: 12px;
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
-  overflow: hidden;
-}
-
-.project-images img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  object-fit: contain;
-}
-
-.project-images figcaption {
-  margin-top: 12px;
-  padding: 0 4px 4px;
-  color: #64748b;
-  font-size: 0.9rem;
-  line-height: 1.6;
-  text-align: center;
-}
-```
-
-    .muted {
-      color: #687067;
-    }
-
-    footer {
-      margin-top: 70px;
-      color: #687067;
-      font-size: 14px;
-    }
-  </style>
-</head>
-
-<body>
-  <main>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
-    </nav>
-
-    <p class="eyebrow">Personal Portfolio</p>
-    <h1>Hi, I'm Fateme Ghorbani.</h1>
-
-    <p class="intro">
-      Computer Science graduate with professional software
-      development experience and hands-on experience in data
-      analysis, analytics tracking, and machine learning.
-      I enjoy solving real-world problems through analytical
-      thinking and technical skills.
-    </p>
-
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        I combine a Computer Science background with professional
-        software development experience and academic projects.
-        I am interested in exploring data, solving practical
-        problems, and turning findings into useful insights.
-      </p>
-    </section>
-
-    <section id="skills">
-      <h2>Technical Skills</h2>
-      <div class="skills">
-        <span>Python</span>
-         <span>SQL</span>
-        <span>Pandas</span>
-        <span>NumPy</span>
-        <span>Excel</span>
-        <span>Power BI</span>
-        <span>Data Analysis</span>
-        <span>Data Visualization</span>
-        <span>Machine Learning</span>
-        <span>Scikit-learn</span>
-         <span>Matplotlib</span>
-        <span>Seaborn</span>
-        <span>Mathematics</span>
-        <span>GIT</span>
-      </div>
-    </section>
-
-    <section id="projects">
-      <h2>Selected Projects</h2>
-      
-       <div class="project">
-
-<section class="project">
-  <h2>Discovering Smuggling Ports and Unconventional POIs Using Machine Learning</h2>
-
-  <h3>Project Overview</h3>
-  <p>
-    This bachelor's thesis explores the use of unsupervised machine learning
-    to identify unusual vessel activity and discover unconventional
-    Points of Interest (POIs) using Automatic Identification System (AIS) data.
-    The goal was to identify geographic patterns that may warrant further
-    investigation, rather than to confirm illegal activities.
-  </p>
-
-  <h3>Dataset and Study Area</h3>
-  <p>
-    The project used AIS vessel tracking data obtained from the U.S.
-    MarineCadastre database. The analyzed records covered the period from
-    December 31, 2020, to March 28, 2021, within a selected area of the
-    Pacific Ocean.
-  </p>
-  <ul>
-    <li>Initial dataset: 385,560 records</li>
-    <li>After initial filtering: 304,988 records</li>
-    <li>After handling missing values and preparing selected attributes:
-      304,788 records across 18 columns</li>
-    <li>After outlier removal: 142,649 records across 18 columns</li>
-  </ul>
-
-  <h3>Data Preprocessing</h3>
-  <p>
-    Data preprocessing included removing unnecessary identifying attributes,
-    handling missing values, creating indicators for missing data, and
-    detecting statistical and logical outliers. These steps prepared the
-    vessel tracking data for spatial analysis and clustering.
-  </p>
-
-  <h3>Methodology</h3>
-  <p>
-    The project applied HDBSCAN, a density-based unsupervised clustering
-    algorithm, to vessel positions. The analysis focused on records with
-    a Speed Over Ground (SOG) below 5 knots. Latitude and longitude
-    coordinates were standardized before clustering, with a minimum cluster
-    size of 10.
-  </p>
-  <p>
-    The algorithm grouped spatially dense observations and labeled points
-    that did not fit any cluster as noise. These noise points were examined
-    as potential unconventional POIs for further investigation.
-  </p>
-
-  <h3>Visualizations</h3>
-  <p>
-    Interactive geographic visualizations were created to explore the
-    spatial distribution of vessel observations, detected clusters, and
-    noise points. A heatmap was also generated to visualize the geographic
-    distribution of clustered observations.
-  </p>
-
-  <div class="project-images">
-   
-
-  <figure>
-    <img
-      src="images/cluster-map.png"
-      alt="Geographic map showing HDBSCAN clusters and noise points"
-    />
-    <figcaption>
-      Spatial distribution of vessel observations and detected clusters.
-    </figcaption>
-   </figure>
-    <figure>
-      <img
-        src="images/heatmap.png"
-        alt="Heatmap showing the spatial distribution of clustered vessel observations"
-      />
-      <figcaption>
-        Heatmap of clustered vessel observations.
-      </figcaption>
-    </figure>
-  </div>
-
-  <h3>Tools and Technologies</h3>
-  <p>
-    Python, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, HDBSCAN,
-    Folium
-  </p>
-
-  <h3>Key Takeaway</h3>
-  <p>
-    This project demonstrates how unsupervised machine learning and
-    geospatial visualization can support the exploration of unusual
-    vessel activity in AIS data. The detected patterns are exploratory
-    findings and do not, on their own, establish smuggling or other
-    illegal activity.
-  </p>
-
-  <p>
-    <a
-      href="https://github.com/fateme-ghorbani/Bachelor-s-Thesis-in-Computer-Science"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      View Project on GitHub
-    </a>
-  </p>
-</section>
-      
-  <div class="project">
-        <h3>Call Center Analysis</h3>
-        <p class="muted">
-          Analyzing call outcomes, queues, contact reasons,
-          and operational metrics using Python and Pandas.
+      <section id="about">
+        <h2>About Me</h2>
+        <p>
+          My background combines computer science, software development, and
+          academic projects in data analysis and machine learning. I enjoy
+          exploring data, solving practical problems, and turning findings into
+          meaningful insights. I am particularly interested in applying
+          analytical and technical skills to real-world challenges while
+          continuing to grow in the fields of data and technology.
         </p>
-        <p>Tools: Python · Pandas · Data Analysis</p>
-      </div>
+      </section>
 
+      <section id="skills">
+        <h2>Technical Skills</h2>
 
-      <div class="project">
-        <h3>Sales Analysis</h3>
-        <p class="muted">
-          Exploring sales performance, average order value,
-          regional revenue, and product category contribution.
+        <div class="skills">
+          <span class="skill">
+            <img src="images/python.svg" alt="" />
+            Python
+          </span>
+
+          <span class="skill">
+            <img src="images/SQL.png" alt="" />
+            SQL
+          </span>
+
+          <span class="skill">
+            <img src="images/pandas.svg" alt="" />
+            Pandas
+          </span>
+
+          <span class="skill">
+            <img src="images/numpy.svg" alt="" />
+            NumPy
+          </span>
+
+          <span class="skill">
+            <img src="images/excel.jpeg" alt="" />
+            Excel
+          </span>
+
+          <span class="skill">
+            <img src="images/powerBi.jpeg" alt="" />
+            Power BI
+          </span>
+
+          <span class="skill">
+            <img src="images/dataAnalysis.jpeg" alt="" />
+            Data Analysis
+          </span>
+
+          <span class="skill">
+            <img src="images/DV.jpeg" alt="" />
+            Data Visualization
+          </span>
+
+          <span class="skill">
+            <img src="images/ML.jpeg" alt="" />
+            Machine Learning
+          </span>
+
+          <span class="skill">
+            <img src="images/scikitlearn.svg" alt="" />
+            Scikit-learn
+          </span>
+
+          <span class="skill">
+            <img src="images/matplotlib.png" alt="" />
+            Matplotlib
+          </span>
+
+          <span class="skill">
+            <img src="images/seaborn.png" alt="" />
+            Seaborn
+          </span>
+
+          <span class="skill">
+            <img src="images/math.jpeg" alt="" />
+            Math
+          </span>
+
+          <span class="skill">
+            <img src="images/git.svg" alt="" />
+            Git
+          </span>
+        </div>
+      </section>
+
+      <section class="project">
+        <h2>Selected Projects</h2>
+        <div>
+          <p class="project-title">
+            Discovering Smuggling Ports and Unconventional POIs Using Machine
+            Learning
+          </p>
+
+          <h4>Project Overview</h4>
+          <p>
+            This bachelor's thesis explores the use of unsupervised machine
+            learning to identify unusual vessel activity and discover
+            unconventional Points of Interest (POIs) using Automatic
+            Identification System (AIS) data. The goal was to identify
+            geographic patterns that may warrant further investigation, rather
+            than to confirm illegal activities.
+          </p>
+
+          <h4>Dataset and Study Area</h4>
+          <p>
+            The project used AIS vessel tracking data obtained from the U.S.
+            MarineCadastre database. The analyzed records covered the period
+            from December 31, 2020, to March 28, 2021, within a selected area of
+            the Pacific Ocean.
+          </p>
+          <ul>
+            <li>Initial dataset: 385,560 records</li>
+            <li>After initial filtering: 304,988 records</li>
+            <li>
+              After handling missing values and preparing selected attributes:
+              304,788 records across 18 columns
+            </li>
+            <li>After outlier removal: 142,649 records across 18 columns</li>
+          </ul>
+
+          <h4>Data Preprocessing</h4>
+          <p>
+            Data preprocessing included removing unnecessary identifying
+            attributes, handling missing values, creating indicators for missing
+            data, and detecting statistical and logical outliers. These steps
+            prepared the vessel tracking data for spatial analysis and
+            clustering.
+          </p>
+
+          <h4>Methodology</h4>
+          <p>
+            The project applied HDBSCAN, a density-based unsupervised clustering
+            algorithm, to vessel positions. The analysis focused on records with
+            a Speed Over Ground (SOG) below 5 knots. Latitude and longitude
+            coordinates were standardized before clustering, with a minimum
+            cluster size of 10.
+          </p>
+          <p>
+            The algorithm grouped spatially dense observations and labeled
+            points that did not fit any cluster as noise. These noise points
+            were examined as potential unconventional POIs for further
+            investigation.
+          </p>
+
+          <h4>Visualizations</h4>
+          <p>
+            Interactive geographic visualizations were created to explore the
+            spatial distribution of vessel observations, detected clusters, and
+            noise points. A heatmap was also generated to visualize the
+            geographic distribution of clustered observations.
+          </p>
+
+          <div class="project-images">
+            <figure>
+              <img
+                src="images/cluster-map.png"
+                alt="Geographic map showing HDBSCAN clusters and noise points"
+              />
+              <figcaption>
+                Spatial distribution of vessel observations and detected
+                clusters.
+              </figcaption>
+            </figure>
+            <figure>
+              <img
+                src="images/heatmap.png"
+                alt="Heatmap showing the spatial distribution of clustered vessel observations"
+              />
+              <figcaption>Heatmap of clustered vessel observations.</figcaption>
+            </figure>
+          </div>
+
+          <h4>Tools and Technologies</h4>
+          <p>
+            Python, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, HDBSCAN,
+            Folium
+          </p>
+
+          <h4>Key Takeaway</h4>
+          <p>
+            This project demonstrates how unsupervised machine learning and
+            geospatial visualization can support the exploration of unusual
+            vessel activity in AIS data. The detected patterns are exploratory
+            findings and do not, on their own, establish smuggling or other
+            illegal activity.
+          </p>
+
+          <p>
+            <a
+              href="https://github.com/fateme-ghorbani/Bachelor-s-Thesis-in-Computer-Science"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Project on GitHub
+            </a>
+          </p>
+        </div>
+
+        <div>
+          <p class="project-title">
+            Call Center Performance Analysis and Interactive KPI Dashboard
+          </p>
+
+          <h4>Project Overview</h4>
+          <p>
+            This project focuses on analyzing call center performance using
+            operational and customer experience data. The goal was to identify
+            service bottlenecks, evaluate key performance indicators (KPIs), and
+            turn raw call records into actionable insights for operational
+            improvement.
+          </p>
+          <p>
+            Beyond data analysis, I developed an interactive dashboard connected
+            to a FastAPI backend, allowing users to explore performance metrics
+            by team, shift, and date range.
+          </p>
+
+          <h4>Problem and Analytical Approach</h4>
+          <p>
+            Overall performance metrics do not always reveal where service
+            problems occur or what may contribute to them. Long waiting times,
+            abandoned calls, extended handling durations, and call transfers
+            require deeper investigation across teams and call categories.
+          </p>
+          <p>
+            I first validated and cleaned the data, then calculated call center
+            KPIs and compared results across teams, call reasons, and agents. I
+            used these comparisons to identify areas requiring further
+            investigation and formulate practical recommendations.
+          </p>
+
+          <h4>Dataset and Data Cleaning</h4>
+          <ul>
+            <li>Initial dataset: 968 records and 16 columns</li>
+            <li>Final cleaned dataset: 964 records and 20 columns</li>
+            <li>
+              Identified and handled 2 records with negative handling durations
+            </li>
+            <li>
+              Investigated duplicate Call IDs and removed an inconsistent
+              duplicate
+            </li>
+            <li>
+              Created derived variables for cleaned handling time, call hour,
+              and shift
+            </li>
+          </ul>
+          <p>
+            Additional validation covered missing values, date and time formats,
+            and logical consistency between call status and handling time.
+            Missing values were retained when reliable replacement values could
+            not be inferred.
+          </p>
+
+          <h4>Interactive Dashboard</h4>
+          <p>
+            I built an interactive dashboard using HTML, CSS, and JavaScript,
+            with a FastAPI backend providing filtered KPI results through the
+            <code>/kpis</code> endpoint.
+          </p>
+
+          <div class="dashboard-showcase">
+            <figure>
+              <img
+                src="images/call-center-analysis.png"
+                alt="Interactive call center dashboard showing KPI cards, team and shift filters, date filters, and contact volume charts"
+                class="dashboard-image"
+                loading="lazy"
+              />
+              <figcaption>
+                Call Center Performance Dashboard — filtered operational KPIs
+                and contact volume trends.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h4>Dashboard Snapshot: Support — Morning Shift</h4>
+          <p>
+            For the selected period of January 1–6, 2026, the dashboard
+            displayed 26 contacts, an Answer Rate of 92.31%, and an Abandon Rate
+            of 7.69%. Average Handle Time was 392.33 seconds, while Average Wait
+            Time was 142.12 seconds. The average CSAT score was 3.21, FCR was
+            75%, and Transfer Rate was 7.69%.
+          </p>
+          <p>
+            Contact volume peaked at 11:00, with 9 calls, while January 1 had
+            the highest daily volume, with 7 calls. These results describe the
+            selected team, shift, and date range and should not be interpreted
+            as overall call center performance.
+          </p>
+
+          <h4>Dashboard Features</h4>
+          <ul>
+            <li>
+              <strong>KPI monitoring:</strong>
+              Answer Rate, Abandon Rate, Average Handle Time (AHT), Average Wait
+              Time (AWT), CSAT, FCR, Transfer Rate, and Contact Volume.
+            </li>
+            <li>
+              <strong>Interactive filters:</strong>
+              Filter results by team, shift, and date range.
+            </li>
+            <li>
+              <strong>Hourly analysis:</strong>
+              Explore contact volume by hour and identify peak hours.
+            </li>
+            <li>
+              <strong>Daily analysis:</strong>
+              Compare contact volume by day and identify peak days.
+            </li>
+            <li>
+              <strong>API integration:</strong>
+              Retrieve filtered KPI results from the FastAPI backend.
+            </li>
+          </ul>
+
+          <h4>Key Findings</h4>
+          <ul>
+            <li>
+              <strong>Support queue:</strong>
+              In the overall team-level analysis, Support had an Answer Rate of
+              82.66%, an Abandon Rate of 17.34%, an AWT of 142.5 seconds, an AHT
+              of 406.21 seconds, and an average CSAT score of 3.18.
+            </li>
+            <li>
+              <strong>Handling time:</strong>
+              Support had a higher AHT than the other teams across the analyzed
+              call-reason categories, suggesting that call mix alone did not
+              explain the difference.
+            </li>
+            <li>
+              <strong>Transfers:</strong>
+              Transferred calls had an average handling time of 350.87 seconds,
+              compared with 301.12 seconds for other calls. This association
+              warrants further investigation into routing and knowledge-base
+              coverage.
+            </li>
+            <li>
+              <strong>Agent-level variation:</strong>
+              Agent A07 had an average handling time of 526.62 seconds across 29
+              calls, highlighting a case for further review in context.
+            </li>
+          </ul>
+
+          <h4>Business Recommendations</h4>
+          <p>
+            The findings suggest reviewing Support staffing capacity and
+            handling workflows, investigating the reasons for longer handling
+            times across call categories, and examining routing processes for
+            call reasons with high transfer rates. Agent-level comparisons
+            should account for workload and call complexity before drawing
+            conclusions about individual performance.
+          </p>
+
+          <h4>Tools and Technologies</h4>
+          <p>
+            Python, Pandas, NumPy, Jupyter Notebook, HTML, CSS, JavaScript,
+            FastAPI, descriptive statistics, data cleaning, feature engineering,
+            KPI analysis
+          </p>
+
+          <h4>Key Takeaway</h4>
+          <p>
+            This project demonstrates an end-to-end data analytics workflow,
+            from data validation and KPI calculation to operational analysis,
+            business recommendations, and dashboard development. It combines
+            analytical thinking with backend development to make performance
+            metrics accessible and useful for decision-making.
+          </p>
+
+          <p>
+            <a
+              href="https://github.com/fateme-ghorbani/call-center-analysis"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Project on GitHub
+            </a>
+          </p>
+        </div>
+
+        <div>
+          <p class="project-title">
+            Diabetes Prediction Using Artificial Neural Network
+          </p>
+
+          <h4>Project Overview</h4>
+          <p>
+            This project explores the use of an Artificial Neural Network (ANN)
+            to predict diabetes outcomes from health-related features using the
+            Pima Indians Diabetes Dataset. The goal was to build a binary
+            classification pipeline, address data quality issues, train a neural
+            network, and evaluate its performance on unseen data.
+          </p>
+
+          <h4>Problem Statement and Analytical Approach</h4>
+          <p>
+            The main challenge was to build a reliable classification model from
+            a relatively small healthcare dataset containing potentially invalid
+            zero values and an unequal distribution of target classes. Rather
+            than training a model directly on the raw data, I first addressed
+            data quality, prepared the input features, and designed a training
+            and evaluation workflow.
+          </p>
+          <p>
+            My approach combined median imputation, feature standardization,
+            class-weighted neural network training, and evaluation using
+            multiple classification metrics. The objective was to assess not
+            only overall predictive accuracy, but also how effectively the model
+            identified positive cases.
+          </p>
+
+          <h4>Dataset</h4>
+          <ul>
+            <li>Dataset: Pima Indians Diabetes Dataset</li>
+            <li>Original size: 768 records and 9 columns</li>
+            <li>Input features: 8 health-related variables</li>
+            <li>Target variable: <code>Outcome</code></li>
+            <li>Class 0: Negative diabetes outcome</li>
+            <li>Class 1: Positive diabetes outcome</li>
+          </ul>
+
+          <h4>Data Preprocessing</h4>
+          <ul>
+            <li>
+              Identified zero values treated as invalid in Glucose,
+              BloodPressure, SkinThickness, Insulin, and BMI.
+            </li>
+            <li>
+              Replaced those values with missing values and applied median
+              imputation.
+            </li>
+            <li>
+              Split the dataset into training, validation, and test sets using
+              stratified sampling: 70%, 15%, and 15%.
+            </li>
+            <li>
+              Standardized the input features using
+              <code>StandardScaler</code>, fitted on the training set.
+            </li>
+          </ul>
+
+          <h4>Model Architecture and Training</h4>
+          <p>
+            I implemented a feed-forward Artificial Neural Network using
+            TensorFlow/Keras. The network contains two hidden Dense layers with
+            32 and 16 units, ReLU activations, a Dropout layer, and a sigmoid
+            output for binary classification.
+          </p>
+          <ul>
+            <li>
+              <strong>Optimizer:</strong> Adam with an initial learning rate of
+              0.001
+            </li>
+            <li><strong>Loss function:</strong> Binary Cross-Entropy</li>
+            <li><strong>Regularization:</strong> Dropout with a rate of 0.2</li>
+            <li><strong>Class balancing:</strong> Computed class weights</li>
+            <li>
+              <strong>Training controls:</strong> Early Stopping and
+              ReduceLROnPlateau
+            </li>
+            <li>
+              <strong>Maximum training epochs:</strong> 200, with callbacks
+              monitoring validation performance
+            </li>
+            <li><strong>Batch size:</strong> 32</li>
+            <li><strong>Classification threshold:</strong> 0.5</li>
+          </ul>
+
+          <h4>Model Evaluation</h4>
+          <p>
+            The final model was evaluated on a held-out test set of 116 records.
+            Multiple metrics were used to examine overall performance,
+            positive-class identification, and the model's ability to
+            distinguish between the two classes.
+          </p>
+
+          <div class="metric-grid">
+            <div class="metric-card">
+              <span>Accuracy</span>
+              <strong>79.31%</strong>
+            </div>
+            <div class="metric-card">
+              <span>Precision</span>
+              <strong>71.79%</strong>
+            </div>
+            <div class="metric-card">
+              <span>Recall</span>
+              <strong>68.29%</strong>
+            </div>
+            <div class="metric-card">
+              <span>F1-score</span>
+              <strong>70.00%</strong>
+            </div>
+            <div class="metric-card">
+              <span>ROC-AUC</span>
+              <strong>0.8615</strong>
+            </div>
+          </div>
+
+          <p>
+            The confusion matrix shows 64 correctly classified negative cases
+            and 28 correctly classified positive cases. The model also produced
+            11 false positives and 13 false negatives on the test set.
+          </p>
+
+          <h4>Training and Evaluation Visualizations</h4>
+          <p>
+            Training and validation curves were used to inspect learning
+            behavior and potential overfitting. The ROC curve and confusion
+            matrix provide additional views of the model's classification
+            performance.
+          </p>
+
+          <div class="project-images">
+            <figure>
+              <img
+                src="images/accuracy and loss.png"
+                alt="Training and validation accuracy and loss across epochs"
+                loading="lazy"
+              />
+              <figcaption>
+                Training history: accuracy and loss across epochs.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h4>Key Takeaway</h4>
+          <p>
+            This project demonstrates an end-to-end machine learning workflow,
+            including data quality checks, preprocessing, neural network design,
+            class weighting, training control, and multi-metric evaluation. The
+            test results achieved 79.31% accuracy and a ROC-AUC of 0.8615, while
+            the positive-class recall of 68.29% highlights an opportunity for
+            further improvement.
+          </p>
+          <p>
+            This is an educational machine learning project, not a clinically
+            validated diagnostic system. Its predictions should not be used for
+            medical decision-making.
+          </p>
+
+          <h4>Tools and Technologies</h4>
+          <p>
+            Python, NumPy, Pandas, Scikit-learn, TensorFlow, Keras, Matplotlib,
+            Joblib
+          </p>
+
+          <p>
+            <a
+              href="https://github.com/fateme-ghorbani/diabetes-ann-classification"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Project on GitHub
+            </a>
+          </p>
+        </div>
+
+        <div>
+          <p class="project-title">
+            Fashion-MNIST Image Classification with MLP and CNN
+          </p>
+
+          <h4>Project Overview</h4>
+          <p>
+            This project investigates neural network architectures and training
+            configurations for classifying grayscale images of clothing items.
+            Rather than relying on a single model, I conducted a series of
+            experiments to examine how network architecture, hidden-layer size,
+            regularization, optimization algorithms, and convolution kernel
+            sizes affect classification performance.
+          </p>
+
+          <h4>Problem and Approach</h4>
+          <p>
+            The main challenge was to understand how different model design
+            choices influence learning behavior and generalization. I started
+            with a baseline Multi-Layer Perceptron (MLP), then systematically
+            compared alternative configurations and explored a Convolutional
+            Neural Network (CNN) for image classification.
+          </p>
+          <p>
+            Training and validation accuracy and loss were tracked across
+            experiments to compare model behavior and investigate potential
+            overfitting.
+          </p>
+
+          <h4>Dataset</h4>
+          <ul>
+            <li>Dataset: Fashion-MNIST</li>
+            <li>Total images: 70,000 grayscale images</li>
+            <li>Training set: 60,000 images</li>
+            <li>Test set: 10,000 images</li>
+            <li>Image dimensions: 28 × 28 pixels</li>
+            <li>Number of classes: 10 clothing categories</li>
+            <li>Data source: TensorFlow/Keras</li>
+          </ul>
+
+          <h4>Data Preprocessing</h4>
+          <ul>
+            <li>Normalized pixel values from the range [0, 255] to [0, 1].</li>
+            <li>Converted class labels to one-hot encoded vectors.</li>
+            <li>
+              Flattened images for MLP models and reshaped images to 28 × 28 × 1
+              for CNN training.
+            </li>
+          </ul>
+
+          <h4>Experiments</h4>
+
+          <p><strong>1. Baseline MLP</strong></p>
+          <p>
+            Built a baseline network with a Flatten layer, one hidden Dense
+            layer containing 128 neurons with ReLU activation, and a 10-neuron
+            Softmax output layer.
+          </p>
+
+          <p><strong>2. Hidden-Layer Size and Architecture</strong></p>
+          <p>
+            Compared MLP models with 100, 200, 300, and 400 hidden neurons.
+            Further experiments examined seven two-hidden-layer configurations:
+            (256, 128), (128, 256), (256, 256), (128, 128), (300, 300), (400,
+            300), and (400, 400).
+          </p>
+
+          <p><strong>3. Overfitting and Regularization</strong></p>
+          <p>
+            Investigated L2 regularization and Dropout using two-hidden-layer
+            architectures (256, 256) and (400, 400), with an L2 coefficient of
+            0.001 and a Dropout rate of 0.2.
+          </p>
+
+          <p><strong>4. Optimization Algorithms</strong></p>
+          <p>
+            Compared SGD, RMSprop, and Adam using the same baseline MLP
+            architecture to investigate differences in validation loss and
+            accuracy.
+          </p>
+
+          <p><strong>5. Convolutional Neural Network (CNN)</strong></p>
+          <p>
+            Built a CNN with 32 convolutional filters, MaxPooling, a 64-neuron
+            Dense layer, and a 10-class Softmax output. Compared convolution
+            kernel sizes of 2 × 2, 4 × 4, and 6 × 6.
+          </p>
+
+          <h4>Training Setup</h4>
+          <ul>
+            <li>Epochs per experiment: 10</li>
+            <li>Batch size: 32</li>
+            <li>
+              MLP and CNN optimizer: Adam, except in the optimizer comparison
+            </li>
+            <li>Loss function: Categorical Cross-Entropy</li>
+            <li>Activation functions: ReLU and Softmax</li>
+          </ul>
+
+          <h4>Experimental Results</h4>
+          <p>
+            Validation accuracy and loss curves were plotted to compare model
+            configurations. These visualizations help assess learning behavior
+            and reveal how architectural and training choices affect validation
+            performance.
+          </p>
+
+          <div class="project-images">
+            <figure>
+              <img
+                src="images/fashion-mlp-experiments.png"
+                alt="Validation loss and accuracy for different MLP architectures"
+                loading="lazy"
+              />
+              <figcaption>
+                MLP experiments: comparison of validation loss and accuracy
+                across different hidden-layer configurations.
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img
+                src="images/fashion-cnn-kernels.png"
+                alt="Validation loss and accuracy for CNN models with different convolution kernel sizes"
+                loading="lazy"
+              />
+              <figcaption>
+                CNN experiments: validation performance with 2 × 2, 4 × 4, and 6
+                × 6 convolution kernels.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h4>Key Takeaway</h4>
+          <p>
+            This project demonstrates an experimental approach to deep learning,
+            covering baseline modeling, architecture comparison, regularization,
+            optimizer selection, and convolutional feature extraction. It
+            emphasizes evaluating model configurations using validation curves
+            rather than assuming that a larger or more complex network will
+            always perform better.
+          </p>
+
+          <h4>Tools and Technologies</h4>
+          <p>Python, TensorFlow, Keras, Matplotlib, NumPy</p>
+
+          <p>
+            <a
+              href="https://github.com/fateme-ghorbani/AI-project"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Project on GitHub
+            </a>
+          </p>
+        </div>
+
+        <div>
+          <p class="project-title">
+            Apartment Rental Database Management System
+          </p>
+
+          <h4>Project Overview</h4>
+          <p>
+            This project focuses on designing and implementing a relational
+            database for managing apartment rentals. It organizes information
+            about tenants, landlords, apartments, individual units, rental
+            contracts, payments, and household members.
+          </p>
+
+          <h4>Problem Statement</h4>
+          <p>
+            Apartment rental management involves multiple interconnected
+            entities. Without a structured database, maintaining consistent
+            records and retrieving information about tenants, properties,
+            contracts, and payments can become difficult. The goal of this
+            project was to organize these records and establish relationships
+            between them using a relational database schema.
+          </p>
+
+          <h4>Database Design</h4>
+          <p>
+            The database was designed around seven related tables, using primary
+            keys to identify records and foreign keys to define relationships
+            between entities.
+          </p>
+          <ul>
+            <li>
+              <strong>Tenant:</strong> Tenant identification and contact
+              information.
+            </li>
+            <li><strong>Landlord:</strong> Property owner information.</li>
+            <li>
+              <strong>Apartment:</strong> Property addresses, unit counts, and
+              landlord relationships.
+            </li>
+            <li>
+              <strong>Unit:</strong> Individual units and floor information.
+            </li>
+            <li>
+              <strong>Contract:</strong> Rental periods, tenants, units, and
+              rent information.
+            </li>
+            <li>
+              <strong>Payment:</strong> Payment amounts, dates, tenants, and
+              apartments.
+            </li>
+            <li>
+              <strong>Member:</strong> Household members associated with
+              tenants.
+            </li>
+          </ul>
+
+          <h4>SQL Implementation</h4>
+          <p>
+            SQL was used to create tables, define primary and foreign key
+            constraints, insert sample data, and retrieve records from related
+            tables. JOIN operations were used to combine information across the
+            Tenant, Contract, and Apartment tables.
+          </p>
+
+          <h4>Example Query</h4>
+          <p>
+            A sample query retrieves tenant full names and apartment addresses
+            for a selected apartment ID. It combines tenant, contract, and
+            apartment records using JOIN operations, demonstrating how
+            relational data can be queried across multiple tables.
+          </p>
+
+          <h4>Tools and Technologies</h4>
+          <p>
+            SQL, Relational Database Design, Primary Keys, Foreign Keys, JOIN
+          </p>
+
+          <h4>Key Takeaway</h4>
+          <p>
+            This project provided practical experience in relational database
+            design, defining relationships between entities, maintaining
+            referential integrity, and writing SQL queries to retrieve
+            information from interconnected tables.
+          </p>
+
+          <p>
+            <a
+              href="https://github.com/fateme-ghorbani/DB-project"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Project on GitHub
+            </a>
+          </p>
+        </div>
+
+        <div>
+          <p class="project-title">
+            House Price Analysis and Prediction Using Linear Regression
+          </p>
+
+          <h4>Project Overview</h4>
+          <p>
+            This project explores a housing dataset to understand the factors
+            associated with property prices and build a baseline price
+            prediction model using Linear Regression. The workflow includes
+            exploratory data analysis, data cleaning, missing-value imputation,
+            outlier detection, feature scaling, and model evaluation.
+          </p>
+
+          <h4>Problem Statement</h4>
+          <p>
+            Housing datasets may contain missing values, extreme observations,
+            and a mixture of numerical, categorical, and binary features. These
+            issues can affect data analysis and predictive modeling. The goal
+            was to examine the dataset, prepare it for analysis, investigate
+            relationships between property characteristics and price, and
+            establish a regression modeling workflow.
+          </p>
+
+          <h4>Dataset</h4>
+          <p>
+            The project uses a housing dataset containing 3,479 records and 8
+            columns. The data includes property area, number of rooms, parking,
+            warehouse, elevator, address, price, and price in USD.
+          </p>
+
+          <ul>
+            <li>Initial records: 3,479</li>
+            <li>Initial features: 8</li>
+            <li>Missing Area values: 9</li>
+            <li>Missing Address values: 23</li>
+            <li>Target variable: Price</li>
+          </ul>
+
+          <h4>Exploratory Data Analysis</h4>
+          <p>
+            Histograms and box plots were used to inspect the distributions of
+            area and price and identify potentially unusual observations. Count
+            plots and pie charts explored property characteristics, including
+            rooms, parking, warehouses, and elevators. Regression plots were
+            also used to examine the relationships between price and selected
+            features.
+          </p>
+
+          <div class="project-images">
+            <figure>
+              <!-- Replace with your area distribution plot -->
+              <img
+                src="images/house-area-distribution.png"
+                alt="Distribution of property area"
+                loading="lazy"
+              />
+              <figcaption>
+                Distribution of property area, including potential outliers.
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img
+                src="images/area&price.png"
+                alt="Relationship between property area and price"
+                loading="lazy"
+              />
+              <figcaption>
+                Exploratory analysis of the relationship between area and price.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h4>Data Preprocessing</h4>
+          <p>
+            The preprocessing workflow included removing records with missing
+            addresses, encoding the address feature using LabelEncoder, imputing
+            missing values with KNNImputer, and detecting potential outliers
+            using the Z-score method with a threshold of 3. StandardScaler was
+            also applied to explore feature normalization.
+          </p>
+
+          <p>
+            The dataset initially contained 23 missing Address values and 9
+            missing Area values. Removing records with missing addresses left
+            3,456 records before Area imputation.
+          </p>
+
+          <h4>Modeling Approach</h4>
+          <p>
+            A Linear Regression model was trained to predict property prices.
+            The data was split into training and testing sets using an 80/20
+            split, with random_state set to 42. The model used property features
+            as input and Price as the target.
+          </p>
+
+          <p>
+            Model performance was evaluated using Mean Squared Error (MSE), Root
+            Mean Squared Error (RMSE), Mean Absolute Error (MAE), Mean Squared
+            Logarithmic Error (MSLE), and the R-squared score.
+          </p>
+
+          <h4>Initial Evaluation Results</h4>
+          <ul>
+            <li>R-squared: approximately 1.00</li>
+            <li>RMSE: 79.37</li>
+            <li>MAE: 64.41</li>
+            <li>MSE: 6,299.04</li>
+          </ul>
+
+          <p class="project-note">
+            Important limitation: Price(USD) appears to be directly derived from
+            Price and was retained as an input feature. Since the target Price
+            can therefore be reconstructed from this feature, the near-perfect
+            R-squared score is affected by target leakage. These initial metrics
+            should not be interpreted as evidence of reliable real-world price
+            prediction. A revised evaluation should exclude Price(USD) from the
+            input features.
+          </p>
+
+          <h4>Tools and Technologies</h4>
+          <p>Python, Pandas, NumPy, Matplotlib, Seaborn, SciPy, Scikit-learn</p>
+
+          <h4>Key Takeaway</h4>
+          <p>
+            This project demonstrates an end-to-end introductory regression
+            workflow, from exploratory data analysis and data preparation to
+            model training and evaluation. It also highlights the importance of
+            identifying target leakage before interpreting predictive
+            performance.
+          </p>
+
+          <p>
+            <a
+              href="https://github.com/fateme-ghorbani/regression"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Project on GitHub
+            </a>
+          </p>
+        </div>
+
+        <div>
+          <p class="project-title">
+            Rice Grain Classification Using K-Nearest Neighbors (KNN)
+          </p>
+
+          <h4>Project Overview</h4>
+          <p>
+            This project implements a K-Nearest Neighbors (KNN) classifier to
+            identify rice varieties based on their geometric characteristics.
+            The model predicts whether a rice grain belongs to the Cammeo or
+            Osmancik class using seven numerical features.
+          </p>
+
+          <h4>Dataset and Features</h4>
+          <p>
+            The project uses the Rice Cammeo and Osmancik dataset. The input
+            features describe the size and shape of rice grains:
+          </p>
+          <ul>
+            <li>Area and Perimeter</li>
+            <li>Major and Minor Axis Length</li>
+            <li>Eccentricity</li>
+            <li>Convex Area</li>
+            <li>Extent</li>
+          </ul>
+
+          <h4>Data Preprocessing</h4>
+          <ul>
+            <li>Removed missing values and duplicate records.</li>
+            <li>Filtered out rows containing invalid "???" values.</li>
+            <li>Converted selected features to numeric data types.</li>
+            <li>
+              Standardized the features using their mean and standard deviation.
+            </li>
+          </ul>
+
+          <h4>Classification Method</h4>
+          <p>
+            The KNN algorithm was implemented manually using Euclidean distance.
+            The program standardizes the user's input, calculates its distance
+            from the dataset samples, selects the k nearest neighbors, and
+            predicts the class by majority vote.
+          </p>
+
+          <h4>Example Prediction</h4>
+          <p>
+            With k = 7, the sample input in the example run was classified as
+            <strong>Osmancik</strong>.
+          </p>
+
+          <p class="project-note">
+            <strong>Note:</strong> This implementation demonstrates the KNN
+            classification process. A separate held-out test set and evaluation
+            metrics are needed to measure generalization performance; the
+            example prediction alone does not establish model accuracy.
+          </p>
+
+          <p class="project-tech">
+            <strong>Technologies:</strong> Python, Pandas, NumPy, KNN, Euclidean
+            Distance, Feature Standardization
+          </p>
+          <p>
+            <a
+              href="https://github.com/fateme-ghorbani/KNN"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Project on GitHub
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <section id="experience">
+        <h2>Experience</h2>
+        <h3>Frontend Developer · Takhfifan</h3>
+        <p class="muted">Dec 2023 – Dec 2024</p>
+        <p>
+          Developed and maintained analytics tracking scripts across more than
+          180 vendor websites, coordinated integrations with vendors, and
+          investigated tracking issues and data discrepancies. Also contributed
+          to a reusable UI design system.
         </p>
-        <p>Focus: Business Analytics</p>
-      </div>
+      </section>
 
-      <div class="project">
-        <h3>Fashion MNIST Classification</h3>
+      <section id="education">
+        <h2>Education</h2>
+
+        <div class="education-item">
+          <div>
+            <h3>M.Sc. in Computer Engineering</h3>
+            <p>University of Tehran · 2026 – Present</p>
+            <p>Specialization: Engineering Education</p>
+          </div>
+          <img
+            src="images/ut.png"
+            alt="University of Tehran logo"
+            class="university-logo"
+          />
+        </div>
+
+        <div class="education-item">
+          <div>
+            <h3>B.Sc. in Computer Science</h3>
+            <p>Alzahra University · Oct 2021 – Oct 2025</p>
+            <p>Final GPA: 16.50/20</p>
+          </div>
+          <img
+            src="images/Alzahra.webp"
+            alt="Alzahra University logo"
+            class="university-logo"
+          />
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
         <p class="muted">
-          An image classification project using an artificial
-          neural network and the Fashion MNIST dataset.
+          Feel free to reach out for professional opportunities or
+          collaboration.
         </p>
-        <a href="https://github.com/fateme-ghorbani/AI-project">
-          View project on GitHub →
-        </a>
-      </div>
-    </section>
 
-    <section id="experience">
-      <h2>Experience</h2>
-      <h3>Frontend Developer · Takhfifan</h3>
-      <p class="muted">Dec 2023 – Dec 2024</p>
-      <p>
-        Developed and maintained analytics tracking scripts
-        across more than 180 vendor websites, coordinated
-        integrations with vendors, and investigated tracking
-        issues and data discrepancies. Also contributed to
-        a reusable UI design system.
-      </p>
-    </section>
+        <div class="contact-links">
+          <a
+            href="https://github.com/fateme-ghorbani"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="images/github.png" alt="" />
+            <span>GitHub</span>
+          </a>
 
-    <section id="education">
-      <h2>Education</h2>
-      <h3>B.Sc. in Computer Science</h3>
-      <p>Alzahra University · Oct 2021 – Oct 2025</p>
-      <p>Final GPA: 16.50/20</p>
-    </section>
+          <a
+            href="https://www.linkedin.com/in/fateme-ghorbani-40a7b7224"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="images/linkedin.png" alt="" />
+            <span>LinkedIn</span>
+          </a>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>
-        <a href="https://github.com/fateme-ghorbani">
-          GitHub Profile
-        </a>
-        <a href="https://www.linkedin.com/in/fateme-ghorbani-40a7b7224" >
-        </a>
-      </p>
-    
-    </section>
+          <a href="fateme.ghorbani81@gmail.com">
+            <img src="images/email.jpeg" alt="" />
+            <span>Email</span>
+          </a>
 
-    <footer>
-      © 2026 Fateme Ghorbani
-    </footer>
-  </main>
-</body>
+          <a href="@Fateme_gh25" target="_blank" rel="noopener noreferrer">
+            <img src="images/telegram.png" alt="" />
+            <span>Telegram</span>
+          </a>
+
+          <a href="tel:+989025417218">
+            <img src="images/phone.png" alt="" />
+            <span>Phone</span>
+          </a>
+        </div>
+      </section>
+
+      <footer>© 2026 Fateme Ghorbani</footer>
+    </main>
+  </body>
 </html>
